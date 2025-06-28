@@ -3,6 +3,7 @@ on: push
 jobs:
   scp-test:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Check if key exists
         run: |
