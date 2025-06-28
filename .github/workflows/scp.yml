@@ -21,6 +21,7 @@ jobs:
           key: ${{secrets.KEY}}
           source: README.md
           target: ~
+          debug: true
 
 
 
