@@ -20,7 +20,7 @@ jobs:
           username: ${{secrets.USERNAME}}
           key: ${{secrets.KEY}}
           source: README.md
-          target: ~
+          target: "/home/${{ secrets.USERNAME }}/"
           debug: true
 
 
