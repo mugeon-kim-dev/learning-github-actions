@@ -1,0 +1,16 @@
+name: scp test
+on: push
+jobs:
+  scp-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/scp-action
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          key: ${{secrets.KEY}}
+          source: README.md
+          target: ~
+            
+
+
