@@ -4,13 +4,22 @@ jobs:
   scp-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if key exists
+        run: |
+          if [ -z "${{ secrets.KEY }}" ]; then
+            echo "KEY is empty or not set"
+            exit 1
+          else
+            echo "KEY is set"
+          fi
+
       - uses: appleboy/scp-action@v1
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.KEY}}
-          source: README.md
-          target: ~
-            
+      with:
+      host: ${{secrets.HOST}}
+      username: ${{secrets.USERNAME}}
+      key: ${{secrets.KEY}}
+      source: README.md
+      target: ~
+
 
 
