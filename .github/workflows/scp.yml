@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+      - uses: actions/checkout@v4
       - name: Check if key exists
         run: |
           if [ -z "${{ secrets.KEY }}" ]; then
